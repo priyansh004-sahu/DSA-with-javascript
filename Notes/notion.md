@@ -197,3 +197,74 @@ A B C D E
 - **Insertion Sort**
 - **Selection Sort**
 
+### Day 42
+
+**Complexity**
+
+- Time Complexity  
+- Handling for large input  
+- Complexity Representation  
+- Type and Graph  
+- Generating complexity equation  
+- TLE  
+- Space Complexity  
+- Questions  
+
+### Day 43
+
+**Multi-D Array**
+
+- Q 51. Matrix Diagonal Sum (LeetCode 1572)  
+
+### Day 45
+
+- Q 52. Transpose Matrix (867)  
+- Q 53. Rotate Image (48)  
+- Q 54. Spiral Matrix (54)  
+
+### Day 47
+
+**Introduction to Strings**  
+**String Methods**
+
+| Method | Description |
+|--------|-------------|
+| length | Returns string length |
+| slice(start, end) | Extracts substring |
+| substring(start, end) | Like slice but no negative indexes |
+| substr(start, length) | Extracts part of string with length |
+| toUpperCase() | Converts to uppercase |
+| toLowerCase() | Converts to lowercase |
+| concat() | Concatenates strings |
+| trim() | Removes spaces from both sides |
+| indexOf(substring) | Returns first index |
+| lastIndexOf(substring) | Returns last index |
+| includes(substring) | Checks if substring exists |
+| startsWith(substring) | Checks if starts with substring |
+| endsWith(substring) | Checks if ends with substring |
+| replace(old, new) | Replaces first occurrence |
+| replaceAll(old, new) | Replaces all occurrences |
+| split(separator) | Splits into array |
+| charAt(index) | Returns char at index |
+| charCodeAt(index) | Returns Unicode value |
+
+### Day 51
+
+- Q 55. Accept a string and print each character in new line  
+- Q 56. Accept a string and print in reverse  
+- Q 57. Palindromic String using Two-pointer algorithm  
+- Q 58. Toggle each alphabet of String  
+  - In: `AcgDfD` → Out: `aCGdFd`  
+- Q 59. Array of strings with prefix matching  
+  - Example: `words = ["pay","attention","practice","attend"]`, `pref = "at"` → Output: 2  
+- Q 60. Capitalize first and last character of each word in a sentence  
+
+### Day 52
+
+- Q 61. Frequency of characters in a string  
+- Q 62. Check if two strings are anagrams  
+
+### Set
+
+- Q 63. Jewels and Stones  
+"""
