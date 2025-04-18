@@ -8,11 +8,22 @@ When all characters from t are found (total === 0), try shrinking from start to 
 
 Update the result if a smaller valid window is found.
 
+
+✅ Why this works:
+m tracks how many of each character we still need.
+
+total keeps count of how many characters from t are still missing.
+
+Once we have all characters (total === 0), we try to minimize the window.
+
+When shrinking the window, if we remove a needed character, we increase total and move the start forward.
 */
 
 
 function minWindow(s, t) {
-    let m = {}; // character -> count
+    // let m = {}; // character -> count
+    let m = new Map();
+
     for (let i = 0; i < t.length; i++) {
         m[t[i]] = (m[t[i]] || 0) + 1; // characters needed in string s
     }
