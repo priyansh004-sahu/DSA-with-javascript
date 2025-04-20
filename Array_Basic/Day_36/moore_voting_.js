@@ -1,23 +1,29 @@
-function findMajorityElement(nums) {
-    let candidate = null, count = 0;
+function  majorityElemen(nums) {
+    let freq = 0, ans = 0;
 
-    // Step 1: Find the candidate
-    for (let num of nums) {
-        if (count === 0) {
-            candidate = num;
+    // Finding candidate
+    for (let i = 0; i < nums.length; i++) {
+        if (freq === 0) {
+            ans = nums[i];
         }
-        count += (num === candidate) ? 1 : -1;
+        if(ans === nums[i]) {
+            freq++;
+        } else {
+            freq--;
+        }
     }
 
-    // Step 2: Verify the candidate
-    count = 0;
+    // Verifying candidate
+    let count = 0;
     for (let num of nums) {
-        if (num === candidate) count++;
+        if (num === ans) {
+            count++;
+        }
     }
 
-    return count > Math.floor(nums.length / 2) ? candidate : -1;
-}
+    return count > Math.floor(nums.length / 2) ? ans : -1;
+};
 
 // Example usage:
-console.log(findMajorityElement([3, 3, 4, 2, 3, 3, 3])); // Output: 3
-console.log(findMajorityElement([1, 2, 3, 4])); // Output: -1 (No majority element)
+console.log( majorityElemen([3, 3, 4, 2, 3, 3, 3])); // Output: 3
+console.log( majorityElemen([1, 2, 3, 4])); // Output: -1 (No majority element)
