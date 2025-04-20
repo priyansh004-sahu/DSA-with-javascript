@@ -16,3 +16,5 @@ function sumofN(n) {        // 0(n) // 0(n)
 }
 var n = 5;
 console.log(sumofN(n));
+
+
