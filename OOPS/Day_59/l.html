@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DSA Progress Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .video-list {
+      list-style: none;
+      padding: 0;
+    }
+    .video-item {
+      background: #fff;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .video-item input {
+      margin-right: 10px;
+    }
+    .video-item a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <h1>DSA Progress Tracker</h1>
+  <ul class="video-list">
+    <li class="video-item">
+      <input type="checkbox" id="video1" />
+      <label for="video1">
+        <a href="https://www.youtube.com/watch?v=VTLCoHnyACE" target="_blank">
+          Lecture 1: Flowchart & Pseudocode + Installation
+        </a>
+      </label>
+    </li>
+    <li class="video-item">
+      <input type="checkbox" id="video2" />
+      <label for="video2">
+        <a href="https://www.youtube.com/watch?v=Dxu7GKtdbnA" target="_blank">
+          Lecture 2: Variables, Data Types & Operators
+        </a>
+      </label>
+    </li>
+    <li class="video-item">
+      <input type="checkbox" id="video3" />
+      <label for="video3">
+        <a href="https://www.youtube.com/watch?v=qR9U6bKxJ7g" target="_blank">
+          Lecture 3: Conditionals & Loops
+        </a>
+      </label>
+    </li>
+    <li class="video-item">
+      <input type="checkbox" id="video4" />
+      <label for="video4">
+        <a href="https://youtu.be/9IZYqostl2M?si=UcGx7X-lHN3B42uN" target="_blank">
+          Lecture 4: Linked Lists
+        </a>
+      </label>
+    </li>
+    <li class="video-item">
+      <input type="checkbox" id="video5" />
+      <label for="video5">
+        <a href="https://youtu.be/WBzZCm46mFo?si=DyFO0WvLum3N1cre" target="_blank">
+          Lecture 5: Stacks and Queues
+        </a>
+      </label>
+    </li>
+    <li class="video-item">
+      <input type="checkbox" id="video6" />
+      <label for="video6">
+        <a href="https://www.youtube.com/watch?v=EbkMABpP52U&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&index=14&pp=iAQB" target="_blank">
+          Lecture 6: Sorting Algorithms - Bubble Sort
+        </a>
+      </label>
+    </li>
+    <li class="video-item">
+      <input type="checkbox" id="video7" />
+      <label for="video7">
+        <a href="https://www.youtube.com/watch?v=TW2m8m_FNJE&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&index=15&pp=iAQB0gcJCYQJAYcqIYzv" target="_blank">
+          Lecture 7: Sorting Algorithms - Selection Sort
+        </a>
+      </label>
+    </li>
+    <li class="video-item">
+      <input type="checkbox" id="video8" />
+      <label for="video8">
+        <a href="https://www.youtube.com/watch?v=0Fxc_jKj2vo&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&index=38&pp=iAQB" target="_blank">
+          Lecture 8: Searching Algorithms - Binary Search
+        </a>
+      </label>
+    </li>
+    <li class="video-item">
+      <input type="checkbox" id="video9" />
+      <label for="video9">
+        <a href="https://www.youtube.com/watch?v=K-RsltkN63w&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&index=39&pp=iAQB0gcJCYQJAYcqIYzv" target="_blank">
+          Lecture 9: Graph Traversal - DFS and BFS
+        </a>
+      </label>
+    </li>
+    <li class="video-item">
+      <input type="checkbox" id="video10" />
+      <label for="video10">
+        <a href="https://www.youtube.com/watch?v=KDH4mhFVvHw&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&index=41&t=36s&pp=iAQB" target="_blank">
+          Lecture 10: Dynamic Programming Introduction
+        </a>
+      </label>
+    </li>
+  </ul>
+
+  <script>
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+    checkboxes.forEach((checkbox) => {
+      // Load saved state from localStorage
+      checkbox.checked = localStorage.getItem(checkbox.id) === 'true';
+
+      // Save state when checkbox changes
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(checkbox.id, checkbox.checked);
+      });
+    });
+  </script>
+</body>
+</html>
