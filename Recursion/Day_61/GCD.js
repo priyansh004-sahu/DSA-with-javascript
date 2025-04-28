@@ -24,10 +24,13 @@ function GCD(a, b) {
 }
 console.log(GCD(16, 24));
 
-// thrid solution  more optimze
+// thrid solution  more  "optimized"  0(log(max(a,b)))
 
 function GCD(a, b) {
     if(b == 0) return a;
     return GCD(b, a % b)
 }
 console.log(GCD(16, 24));
+
+
+// Time complexity is O(log(max(a, b))),
