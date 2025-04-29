@@ -25,3 +25,16 @@
 };
 
 console.log(myPow(2.00000,10));
+
+
+function myPow(x, n) {
+   if(n == 0) return 1.0;
+   return n < 0 ? temp(x, n): temp (x,n)
+}
+
+function temp(x, n) {
+    if(n == 0) return 1;
+    let ans = temp(x, parseInt(n/2));
+    if(n % 2) return ans * ans;
+    return ans * ans * x;
+}

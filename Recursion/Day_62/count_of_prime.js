@@ -1,5 +1,5 @@
 
-//Q80. Count of Primes (Sieve of Eratosthenes)
+// //Q80. Count of Primes (Sieve of Eratosthenes)
 
 //Brute force
 var n = 31;
@@ -37,3 +37,33 @@ function countPrimeNum(n) {
  }
 var n = 31;
 countPrimeNum(n)
+
+
+
+// leetcede only print count
+function countPrimes(n) {
+    if (n <= 2) return 0;
+
+    let isPrime = new Array(n).fill(true);
+    
+    // Sieve of Eratosthenes
+    for (let i = 2; i <= Math.floor(Math.sqrt(n)); i++) {
+        if (isPrime[i]) {
+            for (let j = i * i; j < n; j += i) {
+                isPrime[j] = false;
+            }
+        }
+    }
+    
+    // Count primes
+    let count = 0;
+    for (let i = 2; i < n; i++) {
+        if (isPrime[i]) {
+            count++;
+        }
+    }
+    
+    return count;
+}
+ var n = 31;
+console.log(countPrimes(n))
