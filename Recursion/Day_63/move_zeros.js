@@ -2,9 +2,9 @@
 // 283. Move Zeroes
 
 function moveZeroes(nums) {
-    let idx = 0;
+    let idx = 0;             
     for(var i = 0; i<nums.length; i++) {
-        if(nums[i] != 0) {
+        if(nums[i] != 0) {             // skip the zero
             nums[idx] = nums[i];
             idx++;
         }
