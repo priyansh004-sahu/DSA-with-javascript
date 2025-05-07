@@ -49,3 +49,6 @@
     
  }
  console.log(longestPrefixSuffix("ABCDEABCD")); // Output: 4
+
+
+
