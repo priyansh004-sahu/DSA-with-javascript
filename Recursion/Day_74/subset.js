@@ -20,7 +20,7 @@ function getAllSubsets(arr, ans, i, allSubsets) {
 
 function subSets(arr, ans, i) { 
 
- var arr = [1, 2, 3];
+ var arr = [1, 2, 2];
  var ans = [];
   var allSubsets = new Array();
  getAllSubsets(arr, ans, 0, allSubsets)
