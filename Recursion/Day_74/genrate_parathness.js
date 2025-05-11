@@ -24,4 +24,4 @@ function generateParenthesis(n) {
   console.log(ans);
 }
 
-generateParenthesis(2);
+generateParenthesis(1);
