@@ -16,4 +16,4 @@ function missingNumber(nums) {
     return nums.length;
 }
 
-console.log(missingNumber([3, 1, 0])); // Output: 2
+console.log(missingNumber([1, 2, 0])); // Output: 2
