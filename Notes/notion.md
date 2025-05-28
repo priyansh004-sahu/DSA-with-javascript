@@ -267,4 +267,3 @@ A B C D E
 ### Set
 
 - Q 63. Jewels and Stones  
-"""
