@@ -1,3 +1,8 @@
+//  Count of Element in Sorted Array
+// Mastered the idea of using Binary Search Twice —
+//  to find the first and last occurrence. 
+//  From that? Count = last - first + 1. Clean and optimal! ⚡
+
 function countOccurrences(nums, target) {
     const first = findIndex(nums, target, true);
     if (first === -1) return 0; // not found

@@ -36,3 +36,7 @@ function bookAllocation(arr, k) {
 
 
 console.log(bookAllocation([12, 34, 67, 90], 2));  // 113
+
+// arr = [12, 34, 67, 90];
+// let st = Math.max(...arr);
+// console.log(st);
