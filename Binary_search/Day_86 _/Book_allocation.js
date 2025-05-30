@@ -16,7 +16,7 @@ function bookAllocation(arr, k) {
 
     if(k > arr.length)  return -1;
 
-    let st  = 0, end= 0, ans = -1;
+    let st  = 0, end= 0, ans = end;
     
     for(var i=0; i<arr.length; i++) {
         end += arr[i];

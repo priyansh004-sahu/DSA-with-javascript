@@ -1,35 +1,54 @@
 // 1011. Capacity To Ship Packages Within D Days
 
-function isValid(weights, D, Capacity) {
-    let days = 1, total = 0;
+/**
+ * Helper function to check if we can ship all packages within 'days'
+ * given a specific ship capacity.
+ */
+function youCanShip(weight, days, capacity) {
+    let d = 1; // Start with 1 day
+    let total = 0; // Current day's load
 
-    for (let i = 0; i < weights.length; i++) {
-        if (total + weights[i] > Capacity) {
-            days++;
-            total = weights[i];
+    for (let i = 0; i < weight.length; i++) {
+        // If adding the current package exceeds capacity, ship on next day
+        if (weight[i] + total > capacity) {
+            d++; // Need one more day
+            total = weight[i]; // Start new day with current package
         } else {
-            total += weights[i];
+            total += weight[i]; // Otherwise, keep adding to current day's load
         }
     }
-    return days <= D;
+
+    // Return true if we can ship within given days
+    return d <= days;
 }
 
-function shipWithinDays(weights, days) {
+/**
+ * Main function to find the minimum ship capacity
+ * required to ship all packages within 'days' days.
+ */
+var shipWithinDays = function(weights, days) {
+    // Minimum possible capacity: max weight (can’t split packages)
     let st = Math.max(...weights);
+    
+    // Maximum possible capacity: sum of all weights (all in one day)
     let end = weights.reduce((a, b) => a + b, 0);
-    let result = end;
+    
+    let ans = end; // Store the minimum valid capacity
 
+    // Binary search over the capacity range
     while (st <= end) {
-        let mid = Math.floor(st + (end - st) / 2);
+        let mid = Math.floor(st + (end - st) / 2); // Mid capacity to try
 
-        if (isValid(weights, days, mid)) {
-            result = mid;
-            end = mid - 1;
+        // Check if we can ship with this capacity
+        if (youCanShip(weights, days, mid)) {
+            ans = mid;         // Mid is a valid capacity, try to find smaller
+            end = mid - 1;     // So we search in the left half
         } else {
-            st = mid + 1;
+            st = mid + 1;      // Mid too small, search in right half
         }
     }
-    return result;
+
+    return ans; // This is the smallest capacity that works
 };
 
 
