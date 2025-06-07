@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         class RailwayTicket {
+  constructor() {
+    this.name = "";
+    this.coach = "";
+    this.mob_no = 0;
+    this.amt = 0;
+    this.total_amt = 0;
+  }
+
+  accept(name, coach, mob_no, amt) {
+    this.name = name;
+    this.coach = coach;
+    this.mob_no = mob_no;
+    this.amt = amt;
+  }
+
+  update() {
+    let extra = 0;
+    switch (this.coach) {
+      case "First_AC":
+        extra = 700;
+        break;
+      case "Second_AC":
+        extra = 500;
+        break;
+      case "Third_AC":
+        extra = 250;
+        break;
+      case "Sleeper":
+        extra = 0;
+        break;
+      default:
+        console.log("❌ Invalid coach type. Use First_AC, Second_AC, Third_AC, or Sleeper.");
+        return;
+    }
+    this.total_amt = this.amt + extra;
+  }
+
+  display() {
+    console.log(`NAME: ${this.name}`);
+    console.log(`COACH: ${this.coach}`);
+    console.log(`MOBILE NUMBER: ${this.mob_no}`);
+    console.log(`TOTAL AMOUNT: ₹${this.total_amt}`);
+  }
+}
+
+// 🌟 Main logic
+const name = prompt("Enter your name:");
+const coach = prompt("Enter coach type (First_AC, Second_AC, Third_AC, Sleeper):");
+const mob_no = prompt("Enter mobile number:");
+const amt = parseFloat(prompt("Enter base ticket amount:"));
+
+const ticket = new RailwayTicket();
+ticket.accept(name, coach, mob_no, amt);
+ticket.update();
+ticket.display();
+
+    </script>
+</body>
+</html>
