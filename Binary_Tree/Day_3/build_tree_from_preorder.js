@@ -1,32 +1,41 @@
-
-class Node {
-    constructor(val) {
-        this.data = val;
-        this.left = null;
-        this.right = null;
-    }
+function TreeNode(val, left = null, right = null) {
+    this.val = val;
+    this.left = left;
+    this.right = right;
 }
 
-let idx = -1;
-function buildTree(preorder) {
-    idx++;
+var search = function(inorder, left, right, val) {
+    for (var i = left; i <= right; i++) {
+        if (inorder[i] === val) {
+            return i;
+        }
+    }
+    return -1;
+};
 
-    if (preorder[idx] === -1) return null; // base case
+var preIdx = 0;
 
-    let root = new Node(preorder[idx]);
-    root.left = buildTree(preorder);  // left subtree
-    root.right = buildTree(preorder); // right subtree
+var helper = function(preorder, inorder, left, right) {
+    if (left > right) return null;
+
+    var val = preorder[preIdx++];
+    var root = new TreeNode(val);
+
+    var inIdx = search(inorder, left, right, val);
+
+    root.left = helper(preorder, inorder, left, inIdx - 1);
+    root.right = helper(preorder, inorder, inIdx + 1, right);
 
     return root;
-}
+};
 
-
-
-
-
+var buildTree = function(preorder, inorder) {
+    preIdx = 0;
+    return helper(preorder, inorder, 0, inorder.length - 1);
+};
 
 // === Main Execution ===
-const preorder = [1, 2, 7, -1, -1, -1, 3, 4, -1, -1, 5, -1, -1], k = 3;
-idx = -1; // reset before using
-const root = buildTree(preorder);
-KthLevel(root, k)
+const preorder = [3, 9, 20, 15, 7];
+const inorder = [9, 3, 15, 20, 7];
+const root = buildTree(preorder, inorder);
+console.log(root);
